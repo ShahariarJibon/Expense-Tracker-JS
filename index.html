@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="mcontainer">
+      <div class="header">
+        <div class="threeline">
+          <button><i class="fa fa-bars"></i></button>
+        </div>
+        <h1>Expense Tracker</h1>
+        <div class="threedot">
+          <button><i class="fa fa-ellipsis-v"></i></button>
+        </div>
+      </div>
+
+      <div class="mainSection">
+        <div class="bal">
+          <h2>Balance</h2>
+          <h1 id="balance">$0.00</h1>
+          <button class="addMoney"><i class="fa fa-plus-circle"></i></button>
+        </div>
+        <div
+          class="income-expense"
+          style="display: flex; justify-content: space-around"
+        >
+          <div class="income">
+            <h3 id="income">Income</h3>
+            <p id="money-plus" class="money plus">+$0.00</p>
+          </div>
+          <div class="expense">
+            <h3 id="expense">Expense</h3>
+            <p id="money-minus" class="money minus">-$0.00</p>
+          </div>
+        </div>
+        <div class="transactionHistory">
+          <h3>Transaction History</h3>
+          <ul id="transaction-list"></ul>
+        </div>
+      </div>
+
+      <div class="addModal">
+        <div class="form">
+          <h2>Add Transaction</h2>
+          <input
+            type="text"
+            id="description"
+            placeholder="Enter description..."
+          />
+          <input type="number" id="amount" placeholder="Enter amount..." />
+          <button id="submit">Add Transaction</button>
+          <button id="closeModal">Close</button>
+        </div>
+      </div>
+
+      <div class="balanceModal">
+        <div class="balForm">
+          <h2>Add Money</h2>
+          <input type="number" id="addAmount" placeholder="Enter amount..." />
+          <button id="addSubmit">Add Money</button>
+          <button id="closeBalanceModal">Close</button>
+        </div>
+      </div>
+
+      <div class="footer">
+        <footer class="bottom-nav">
+          <div class="active-capsule"></div>
+
+          <button class="active homeButton">
+            <i class="fa fa-home"></i>
+            <span>Home</span>
+          </button>
+
+          <button class="statsButton">
+            <i class="fa fa-bar-chart"></i>
+            <span>Stats</span>
+          </button>
+
+          <button class="addButton">
+            <i class="fa fa-plus"></i>
+            <span>Add</span>
+          </button>
+
+          <button>
+            <i class="fa fa-cog"></i>
+            <span>More</span>
+          </button>
+        </footer>
+      </div>
+
+      <div class="deleteButton">
+        <button id="deleteSelected">Delete Selected</button>
+      </div>
+
+      <div class="statsModal">
+        <div class="statSelect">
+          <button id="daily">Daily</button>
+          <button id="weekly">Weekly</button>
+          <button id="monthly">Monthly</button>
+        </div>
+        <div class="statPage">
+          <div class="dailyExpense history"></div>
+          <div class="weeklyExpense history"></div>
+          <div class="monthlyExpense history"></div>
+        </div>
+      </div>
+
+      <div class="burgerMenuModal">
+        <div class="burgerMenuButtons">
+          <button class="info">App Info</button>
+          <button class="developer">Developer Profile</button>
+          <button id="resetBtn">Reset App</button>
+        </div>
+        <div class="burgerMenuPage">
+          <div class="appInfo">
+            <h1>App Info</h1>
+            <p>
+              This is a simple expense tracker app built using HTML, CSS, and
+              JavaScript. It allows users to track their income and expenses,
+              view transaction history, and see statistics for daily, weekly,
+              and monthly expenses.
+            </p>
+            <p><span>Version 1.0.0</span></p>
+            <ol>
+              <li>Track your income and expenses</li>
+              <li>View transaction history</li>
+              <li>See statistics for daily, weekly, and monthly expenses</li>
+            </ol>
+          </div>
+
+          <div class="devProfile">
+            <h1>Developer Profile</h1>
+            <p>
+              This app was developed by <span>Jibon</span>. You can find more of
+              my work on my GitHub profile.
+            </p>
+            <a href="https://github.com/ShahariarJibon" target="_blank"
+              ><button>Github Profile</button></a
+            >
+          </div>
+
+          <div class="resetModal">
+            <div class="card">
+              <h1>Click To Reset</h1>
+              <button id="fres">RESET</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="threeDotModal">
+        <div class="threeDotButton">
+          <button class="clearBalance">Clear Balance</button>
+          <button class="clearHistory">Clear History</button>
+        </div>
+
+        <div class="threeDotPage">
+          <div class="threeCard">
+            <h1>Want To Reset?</h1>
+            <button class="chooseButton">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settingsModal">
+        <div class="settingsModalButton">
+          <input id="check" type="checkbox" />
+          <label class="switch" for="check">
+            <svg viewBox="0 0 212.4992 84.4688" overflow="visible">
+              <path
+                pathLength="360"
+                fill="none"
+                stroke="currentColor"
+                d="M 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 A 42.24 42.24 90 0 0 84.4992 42.2496 A 42.24 42.24 90 0 0 42.2496 0 A 42.24 42.24 90 0 0 0 42.2496 A 42.24 42.24 90 0 0 42.2496 84.4688 L 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 A 42.24 42.24 90 0 0 128 42.2496 A 42.24 42.24 90 0 0 170.2496 84.4688 A 42.24 42.24 90 0 0 212.4992 42.2496 A 42.24 42.24 90 0 0 170.2496 0 L 42.2496 0"
+              ></path>
+            </svg>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

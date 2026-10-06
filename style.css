@@ -1,0 +1,801 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f7fb;
+    color: #1f2937;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.mcontainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    flex-shrink: 0;
+}
+
+.mainSection {
+    flex: 1;
+    min-height: 0;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+
+.header {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: #f9fafc;
+    font-size: 22px;
+    cursor: pointer;
+}
+.bal{
+    border-radius: 10px;
+    margin: 10px 10px;
+    padding: 10px;
+    background: #f5e6d5;
+}
+.footer {
+    position: fixed !important;
+
+    bottom: 10px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+
+    width: 90%;
+    box-sizing: border-box;
+
+    padding: 10px 15px;
+    margin: 0;
+
+    background-color: #1f2937;
+    border-radius: 50px;
+
+    z-index: 9999;
+}
+
+.bottom-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom-nav button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+    cursor: pointer;
+}
+
+.bottom-nav button i {
+    font-size: 22px;
+}
+
+.bottom-nav button span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.mainSection{
+    height: calc(100vh - 130px);
+    width: 100%;
+}
+
+.bottom-nav {
+    position: relative;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom-nav button {
+    position: relative;
+    z-index: 2;
+
+    background: transparent;
+    border: none;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    padding: 8px 14px;
+
+    cursor: pointer;
+}
+
+.active-capsule {
+    position: absolute;
+    z-index: 1;
+
+    width: 70px;
+    height: 50px;
+
+    background-color: white;
+    border-radius: 30px;
+
+    left: 0;
+
+    transition: transform 0.3s ease;
+}
+
+.bottom-nav button.active {
+    color: #1f2937;
+}
+
+.income-expense{
+    background-color: #faedde;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.addMoney{
+    background:none;
+    border:none;
+    position: absolute;
+    right: 50px;
+    top: 105px;
+    font-size: 50px;
+    color: #1f2937;
+    
+}
+
+.addModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.form{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f2937;
+    color: #fff;
+    cursor: pointer;
+}
+
+.balanceModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.balanceModal .balForm{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.balanceModal .balForm h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.balanceModal .balForm input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.balanceModal .balForm button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f2937;
+    color: #fff;
+    cursor: pointer;
+}
+
+.transactionHistory {
+    background-color: #f5e6d5;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.transactionHistory h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.transactionHistory ul {
+    list-style-type: none;
+    padding: 0;
+}
+.transactionHistory li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#transaction-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#transaction-list .transaction {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 12px 15px;
+}
+
+#transaction-list .description {
+    text-align: left;
+}
+
+#transaction-list .amount {
+    text-align: right;
+    margin-left: auto;
+}
+
+.transaction {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 5px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+}
+
+.deleteCheckbox {
+    margin-right: 10px;
+    border:none;
+}
+
+.description {
+    text-align: left;
+}
+
+.amount {
+    margin-left: auto;
+    text-align: right;
+}
+
+#deleteSelected {
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.deleteButton {
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    /* initially hidden behind footer */
+    opacity: 0;
+    transform: translateY(100%);
+    pointer-events: none;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+.deleteButton.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.deleteButton button {
+    border: none;
+    background-color: #dc2626;
+    color: white;
+
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+.statSelect button{
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.statsModal {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 76px;
+    background-color: rgb(249, 225, 225);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1000;
+}
+
+.statSelect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background-color: rgba(71, 83, 100, 0.5);
+    padding: 10px 0;
+    margin: 10px auto 0 auto;
+    border-radius: 10px;
+}
+
+.statPage {
+    width: 100%;
+    flex: 1;
+    background:rgb(249, 225, 225);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.dailyExpense {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px; 
+}
+
+.weeklyExpense {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: flex-start; 
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px; 
+}
+
+.monthlyExpense {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: flex-start; 
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px; 
+}
+
+
+
+.dailyExpense, .weeklyExpense, .monthlyExpense {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.dailyExpense {
+    display: flex;
+}
+
+.weeklyExpense, .monthlyExpense {
+    display: none;
+}
+
+.burgerMenuModal{
+    display:none;
+    position:fixed;
+    top:76px;
+    left:0;
+    width:100%;
+    height:90%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.burgerMenuButtons{
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.burgerMenuButtons button{
+    background-color: #5b78a1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.appInfo{
+    position: absolute;
+    left: 20px;
+    top: 200px;
+    color: white;
+    font-size: 16px;
+    display:none;
+}
+
+.appInfo span{
+    font-weight: bold;
+}
+
+.appInfo ol{
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.appInfo li{
+    margin-bottom: 5px;
+}
+
+.appInfo p{
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.appInfo h1{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.devProfile{
+    position: absolute;
+    left: 20px;
+    top: 200px;
+    color: white;
+    font-size: 16px;
+    display: none;
+}
+
+.devProfile h1{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.devProfile p{
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.devProfile button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f2937;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.devProfile span{
+    font-weight: bold;
+    color: #dc2626;
+    background-color: #f5e6d5;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.resetModal{
+    position: absolute;
+    left: 70px;
+    top: 270px;
+    color: white;
+    font-size: 16px;
+    display: none;
+
+}
+
+.resetModal .card{
+    border: 2px solid white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5e6d5;
+    color: #1f2937;
+    border-radius: 20px;
+}
+
+.resetModal button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b02000;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.threeDotModal{
+    display:none;
+    position:fixed;
+    top:76px;
+    left:0;
+    width:100%;
+    height:90%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.threeDotButton{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.threeDotButton button{
+    background-color: #5b78a1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.threeDotPage{
+    position: absolute;
+    left: 70px;
+    top: 270px;
+    color: white;
+    font-size: 16px;
+    display: none;
+}
+
+.threeCard{
+    border: 2px solid white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5e6d5;
+    color: #1f2937;
+    border-radius: 20px;
+}
+
+.threeDotPage button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b02000;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.threeDotPage .choose{
+    position: relative;
+    left: 90px;
+}
+
+.settingsModal{
+    display: none;
+    position:fixed;
+    top:76px;
+    left:0;
+    width:100%;
+    height:90%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.settingsModalButton{
+    position: absolute;
+    bottom: 110px;
+    right: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.switch {
+  --a: 0.5s ease-out;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  height: 1.3em;
+  border-radius: 2em;
+  box-shadow: 0 0 0 0.66em #605196;
+  aspect-ratio: 212.4992/84.4688;
+  background-color: #33374f;
+}
+
+#check {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch svg {
+  height: 100%;
+}
+
+.switch svg path {
+  color: #fff;
+  stroke-width: 16;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 136 224;
+  transition:
+    all var(--a),
+    0s transform;
+  transform-origin: center;
+}
+
+#check:checked ~ .switch svg path {
+  stroke-dashoffset: 180;
+  transform: scaleY(-1);
+}
+
+
+
+
+
+body.dark-theme {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+body.dark-theme .header {
+    background-color: #111827;
+    border-bottom: 1px solid #374151;
+}
+
+body.dark-theme .bal, 
+body.dark-theme .income-expense, 
+body.dark-theme .transactionHistory {
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+body.dark-theme .form, 
+body.dark-theme .balanceModal .balForm,
+body.dark-theme .resetModal .card,
+body.dark-theme .threeCard {
+    background-color: #1f2937;
+    color: #f9fafb;
+}
+
+body.dark-theme .form input, 
+body.dark-theme .balanceModal .balForm input {
+    background-color: #374151;
+    color: #fff;
+    border: 1px solid #4b5563;
+}
+
+body.dark-theme .statsModal,
+body.dark-theme .statPage {
+    background-color: #111827;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
