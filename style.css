@@ -596,12 +596,13 @@ body {
 
 .resetModal{
     position: absolute;
-    left: 70px;
-    top: 270px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(85%, 320px);
     color: white;
     font-size: 16px;
     display: none;
-
 }
 
 .resetModal .card{
@@ -657,8 +658,10 @@ body {
 
 .threeDotPage{
     position: absolute;
-    left: 70px;
-    top: 270px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(85%, 320px);
     color: white;
     font-size: 16px;
     display: none;
@@ -672,6 +675,7 @@ body {
     background-color: #f5e6d5;
     color: #1f2937;
     border-radius: 20px;
+    align-items: center;
 }
 
 .threeDotPage button{

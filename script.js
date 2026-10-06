@@ -386,6 +386,12 @@ resetButton.addEventListener("click", () => {
     fres.addEventListener("click",()=>{
         resetApplication();
     })
+
+    resetButton.addEventListener("click", () => {
+    appInfo.style.display = "none";
+    devProfile.style.display = "none";
+    resetModal.style.display = "revert";
+});
         
     
 });
